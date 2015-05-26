@@ -1,39 +1,34 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+"--------------
+"   Vim Plug
+"--------------
+call plug#begin('~/.vim/plugged')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'mtglsk/mushroom'
 
-Plugin 'luochen1990/rainbow' " Pathenteses are colored
+Plug 'luochen1990/rainbow' " Pathenteses are colored
 let g:rainbow_active = 1
 
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 let g:gruvbox_italic=0
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall , :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins 
-" 						append `!` to auto-approve removal
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
+Plug 'xterm-color-table.vim'
+
+Plug 'Valloric/vim-operator-highlight'
+let g:ophigh_color=218
+
+call plug#end()
+"--------------
+"--------------
+
+
 
 colorscheme Monokai
 colorscheme gruvbox
 set background=dark
+hi String ctermfg=103
 "colorscheme obsidian
 "colorscheme Chasing_Logic
 "colorscheme bubblegum
@@ -44,6 +39,8 @@ set background=dark
 
 set tabstop=4
 set shiftwidth=4
+
+set nu
 
 let mapleader=' '
 
@@ -56,9 +53,15 @@ nmap k gk
 "My own commands/plugins
 " Commands to change comment color to a bright color and back to default
 nnoremap <leader>hic :hi Comment ctermfg=LightMagenta<cr>
-nnoremap <leader>hid :colo gruvbox<cr>
-" 
-",'start=/./ end=/!/ fold'
+nnoremap <leader>hid :colo gruvbox <bar> set background=dark <bar>hi String ctermfg=103 <cr>
+
+nnoremap <leader>ginna :colo mushroom<cr>
+
+" Highlight characters on 81st column
+hi ColorColumn ctermbg=52
+call matchadd('colorColumn','\%81v', 100)
+
+" Rainbow parenthesis highlighting
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
 \   'ctermfgs': ['lightblue', 'lightgreen', 'lightcyan', 'lightmagenta'],
@@ -81,5 +84,3 @@ let g:rainbow_conf = {
 \       'css': 0,
 \   }
 \}
-
-" \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold', 'start=/+/ end=/-/ fold','start=/=/ end=/_/ fold','start=/-/ end=/+/ fold','start=/:/ end=/;/ fold','start=/>/ end=/</ fold','start=/</ end=/>/ fold','start=/*/ end=/^/ fold','start=/^/ end=/*/ fold','start=/\./ end=/!/ fold'],
