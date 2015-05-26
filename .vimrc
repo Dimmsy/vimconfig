@@ -19,6 +19,8 @@ Plug 'xterm-color-table.vim'
 Plug 'Valloric/vim-operator-highlight'
 let g:ophigh_color=218
 
+Plug 'chrisbra/DistractFree'
+
 call plug#end()
 "--------------
 "--------------
@@ -64,7 +66,7 @@ call matchadd('colorColumn','\%81v', 100)
 " Rainbow parenthesis highlighting
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['lightblue', 'lightgreen', 'lightcyan', 'lightmagenta'],
+\   'ctermfgs': ['lightblue', 'lightmagenta', 'lightcyan','lightgreen'],
 \   'operators': '_,_',
 \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \   'separately': {
