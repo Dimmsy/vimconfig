@@ -1,8 +1,19 @@
+" WINDOWS EXCEPTIONS
+if has ("win64") || has("win32")
+	set term=xterm
+	set t_Co=256
+
+
+	call plug#begin('~/vimfiles/plugged')
+else
+" ON LINUX
+	call plug#begin('~/.vim/plugged')
+endif
+
+
 "--------------
 "   Vim Plug
 "--------------
-call plug#begin('~/.vim/plugged')
-
 Plug 'mtglsk/mushroom'
 
 Plug 'luochen1990/rainbow' " Pathenteses are colored
@@ -15,8 +26,6 @@ Plug 'xterm-color-table.vim'
 
 Plug 'Valloric/vim-operator-highlight'
 let g:ophigh_color=218
-
-Plug 'chrisbra/DistractFree'
 
 call plug#end()
 "--------------
