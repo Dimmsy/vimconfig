@@ -66,7 +66,7 @@ call matchadd('colorColumn','\%81v', 100)
 " Rainbow parenthesis highlighting
 let g:rainbow_conf = {
 \   'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-\   'ctermfgs': ['lightblue', 'lightmagenta', 'lightcyan','lightgreen'],
+\   'ctermfgs': ['lightblue', 'lightmagenta', 'lightgreen','lightcyan'],
 \   'operators': '_,_',
 \   'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
 \   'separately': {
