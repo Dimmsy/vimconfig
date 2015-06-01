@@ -53,6 +53,8 @@ set nu
 
 let mapleader=' '
 
+set backspace=indent,eol,start
+
 nmap ; :
 imap jj <Esc>
 nmap j gj
